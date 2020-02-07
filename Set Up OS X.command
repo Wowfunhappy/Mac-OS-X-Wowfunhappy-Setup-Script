@@ -403,14 +403,11 @@ defaults delete com.apple.dock
 
 
 
-# Effectively Disable LaunchPad on 10.7–10.9
+# Neutralize LaunchPad
 
-if (( $(echo "${OSTYPE:6} < 14 && ${OSTYPE:6} > 10" | bc -l) ))
-then
-	defaults write com.apple.dock springboard-show-duration -int 99999999999999999999
-	
-	sudo defaults write /System/Library/User\ Template/Non_localized/Library/Preferences/com.apple.dock springboard-show-duration -int 99999999999999999999
-fi
+echo '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0"><dict><key>launchpad</key><dict><key>ignore</key><dict><key>rules</key><array><dict><key>bundleid</key><string>.</string><key>type</key><string>contains</string></dict><dict><key>name</key><string>a</string><key>type</key><string>contains</string></dict><dict><key>name</key><string>e</string><key>type</key><string>contains</string></dict><dict><key>name</key><string>i</string><key>type</key><string>contains</string></dict><dict><key>name</key><string>o</string><key>type</key><string>contains</string></dict><dict><key>name</key><string>u</string><key>type</key><string>contains</string></dict></array></dict></dict></dict></plist>' | sudo tee /System/Library/CoreServices/Dock.app/Contents/Resources/LaunchPadLayout.plist
+
+defaults write com.apple.dock ResetLaunchPad -bool true
 
 
 
@@ -419,14 +416,6 @@ fi
 defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
 
 sudo defaults write /System/Library/User\ Template/Non_localized/Library/Preferences/com.apple.dock showLaunchpadGestureEnabled -int 0
-
-
-
-# Scroll on Dock icon activates Dock Exposé
-
-defaults write com.apple.dock scroll-to-open -bool TRUE;killall Dock
-
-sudo defaults write /System/Library/User\ Template/Non_localized/Library/Preferences/com.apple.dock scroll-to-open -bool TRUE;killall Dock
 
 
 
