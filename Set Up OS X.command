@@ -18,7 +18,7 @@ if ([[ $(csrutil status) = *enabled* ]])
 then
 	echo "Please disable System Integrity Protection. Follow the below instructions:"
 	echo ""
-	echo "1) Boot into recovery mode"
+	echo "1) Restart with ⌘R keys held down to enter recovery mode"
 	echo "2) Open Utilities → Terminal"
 	echo "3) Type \"csrutil disable\" and press enter"
 	echo "4) Restart your computer normally."
@@ -65,9 +65,9 @@ sudo chflags nohidden /usr
 
 # Disable Automatic Termination
 
-defaults write NSGlobalDomain NSDisableAutomaticTermination -bool false
+defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
 
-sudo defaults write /System/Library/User\ Template/Non_localized/Library/Preferences/.GlobalPreferences NSDisableAutomaticTermination -bool false
+sudo defaults write /System/Library/User\ Template/Non_localized/Library/Preferences/.GlobalPreferences NSDisableAutomaticTermination -bool true
 
 
 
@@ -93,14 +93,6 @@ sudo defaults write /System/Library/User\ Template/Non_localized/Library/Prefere
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 sudo defaults write /System/Library/User\ Template/Non_localized/Library/Preferences/.GlobalPreferences AppleShowAllExtensions -bool true
-
-
-
-# Disable Finder's extension change warning.
-
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
-
-sudo defaults write /System/Library/User\ Template/Non_localized/Library/Preferences/com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 
 
@@ -146,22 +138,11 @@ sudo defaults write /System/Library/User\ Template/Non_localized/Library/Prefere
 
 
 
-
 # In windows and dialogs, make tab move keyboard focus between all controls.
 
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 sudo defaults write /System/Library/User\ Template/Non_localized/Library/Preferences/.GlobalPreferences AppleKeyboardUIMode -int 3
-
-
-
-# Create a keyboard shortcut to toggle full screen.
-
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Enter Full Screen" -string "@d"
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Exit Full Screen" -string "@d"
-
-sudo defaults write /System/Library/User\ Template/Non_localized/Library/Preferences/.GlobalPreferences NSUserKeyEquivalents -dict-add "Enter Full Screen" -string "@d"
-sudo defaults write /System/Library/User\ Template/Non_localized/Library/Preferences/.GlobalPreferences NSUserKeyEquivalents -dict-add "Exit Full Screen" -string "@d"
 
 
 
@@ -223,11 +204,11 @@ sudo defaults write /System/Library/User\ Template/Non_localized/Library/Prefere
 
 
 
-# Default to plain text in TextEdit.
+# Make TextEdit open HTML files as code.
 
-defaults write com.apple.TextEdit RichText -int 0
+defaults write com.apple.TextEdit IgnoreHTML -bool true
 
-sudo defaults write /System/Library/User\ Template/Non_localized/Library/Preferences/com.apple.TextEdit RichText -int 0
+sudo defaults write /System/Library/User\ Template/Non_localized/Library/Preferences/com.apple.TextEdit IgnoreHTML -bool true
 
 
 
@@ -239,7 +220,7 @@ sudo defaults write /System/Library/User\ Template/Non_localized/Library/Prefere
 
 
 
-# Stop websites from prompting to enable push notifications
+# Stop Safari websites from prompting to enable push notifications.
 
 defaults write com.apple.Safari CanPromptForPushNotifications -bool false
 
@@ -368,8 +349,8 @@ sudo mv /Applications/Utilities/Terminal.app /Applications/
 
 # Remove nonfunctional dashboard widgets. (Requisite servers down as of December 2019.)
 
-sudo rm -rf /Library/Widgets/Flight Tracker.wdgt
-sudo rm -rf /Library/Widgets/Ski Report.wdgt
+sudo rm -rf /Library/Widgets/Flight\ Tracker.wdgt
+sudo rm -rf /Library/Widgets/Ski\ Report.wdgt
 sudo rm -rf /Library/Widgets/Translation.wdgt
 sudo rm -rf /Library/Widgets/Weather.wdgt
 
