@@ -351,12 +351,14 @@ sudo mv /Applications/Utilities/Terminal.app /Applications/
 
 sudo rm -rf /Library/Widgets/Flight\ Tracker.wdgt
 sudo rm -rf /Library/Widgets/Ski\ Report.wdgt
+sudo rm -rf /Library/Widgets/Stocks.wdgt
 sudo rm -rf /Library/Widgets/Translation.wdgt
+sudo rm -rf /Library/Widgets/Unit\ Converter.wdgt
 sudo rm -rf /Library/Widgets/Weather.wdgt
 
 
 
-# Remove stupid applications.
+# Remove useless applications.
 
 sudo rm -rf /Applications/Books.app
 sudo rm -rf /Applications/Chess.app
@@ -365,7 +367,6 @@ sudo rm -rf /Applications/Game\ Center.app
 sudo rm -rf /Applications/Home.app
 sudo rm -rf /Applications/iBooks.app
 sudo rm -rf /Applications/iSync.app
-sudo rm -rf /Applications/iTunes.app
 sudo rm -rf /Applications/Launchpad.app
 sudo rm -rf /Applications/News.app
 sudo rm -rf /Applications/Photos.app
@@ -373,6 +374,8 @@ sudo rm -rf /Applications/Siri.app
 sudo rm -rf /Applications/Stickies.app
 sudo rm -rf /Applications/Stocks.app
 sudo rm -rf /Applications/VoiceMemos.app
+sudo rm -rf /Applications/iTunes.app
+sudo rm -rf /System/Library/Screen\ Savers/iTunes\ Artwork.saver
 
 
 
