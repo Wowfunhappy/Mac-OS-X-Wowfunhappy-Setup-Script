@@ -1,4 +1,6 @@
-# Mac-OS-X-Setup-Script
+# Wowfunhappy's Mac OS X Setup Script
+
+##  Set OS X's defaults to what they'd be if OS X was designed by Wowfunhappy 
 
 This setup script makes fresh installations of OS X 10.4 – 10.14 more consistent and usable out of the box, relative to my own personal definitions of "consistent" and "usable".
 
