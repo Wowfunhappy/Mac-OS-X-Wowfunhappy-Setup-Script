@@ -4,7 +4,7 @@
 
 This setup script makes fresh installations of OS X 10.4 – 10.14 more consistent and usable out of the box, relative to my own personal definitions of "consistent" and "usable".
 
-Be forewarned, this script more invasive than most `Defaults Write` setup scripts. I believe that guest accounts also deserve to have sane defaults, so changes will be applied to both the current user _and_ all future users. Poorly-designed atrocities like iTunes and Game Center will be purged from your beautiful machine, never to be seen again. In other words, you should probably read through the script before running it, unless you just really trust my judgement!
+Be forewarned, this script is more invasive than most `Defaults Write` setup scripts. I believe that guest accounts also deserve to have sane defaults, so changes will be applied to both the current user _and_ all future users. Poorly-designed atrocities like iTunes and Game Center will be purged from your beautiful machine, never to be seen again. In other words, you should probably read through the script before running it, unless you just really trust my judgement!
 
 I expect exactly zero other people to be interested in this, but please feel free to let me know if you find it useful. You can also open issues to ask questions—I would be absolutely delighted to discuss why I chose a certain setting.
 
